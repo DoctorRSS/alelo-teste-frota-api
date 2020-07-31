@@ -35,12 +35,12 @@ public class VehicleResource {
 	@Autowired
 	private ApplicationEventPublisher publisher;
 
-	@GetMapping
+	@GetMapping("/filter")
 	public Page<Vehicle> pesquisar(VehicleFilter vehicleFilter, Pageable pageable) {
 		return vehicleService.filtrarComPaginacao(vehicleFilter, pageable);
 	}
 	
-	@GetMapping("/filter")
+	@GetMapping
 	public List<Vehicle> buscarPorFiltro(VehicleFilter vehicleFilter) {
 		return vehicleService.buscarVeiculoComFiltro(vehicleFilter);
 	}
